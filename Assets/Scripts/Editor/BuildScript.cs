@@ -1,9 +1,5 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System.Linq;
 using UnityEditor;
-using UnityEngine;
 
 public class BuildScript
 {
@@ -18,7 +14,10 @@ public class BuildScript
             scenes = GetScenes()            
         };
 
-        BuildPipeline.BuildPlayer(buildPlayerOptions);
+        string buildResult = BuildPipeline.BuildPlayer(buildPlayerOptions);
+
+        if (buildResult.Length > 0)
+            throw new System.Exception($"Build error: {buildResult}");
     }
 
     public static void Package()
