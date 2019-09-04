@@ -15,11 +15,11 @@ echo "Start running Unity edit mode tests..."
     -logFile "$(pwd)/output/editmode_log.xml" \
     -testResults "$(pwd)/output/editmode_results.xml" \
     -testPlatform "editmode"
-#result=$?
-#if [ $result -ne 0 ]; then
- #   echo "Unity editor mode tests failed."
-  #  exit $result
-#fi
+result=$?
+if [ $result -ne 0 ]; then
+    echo "Unity editor mode tests failed."
+    exit $result
+fi
 echo "Start building the project..."
 "$unity" -batchmode \
     -nographics \
