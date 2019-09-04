@@ -7,7 +7,7 @@ public class BuildScript
     {
         var buildPlayerOptions = new BuildPlayerOptions
         {
-            locationPathName = @"c:\temp\mmansouri.apk",
+            locationPathName = @"output\mmansouri.apk",
             options = BuildOptions.AllowDebugging,
             target = BuildTarget.Android,
             targetGroup = BuildTargetGroup.Android,
